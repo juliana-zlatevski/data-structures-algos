@@ -348,3 +348,44 @@ subway.removeByData('TimesSquare');
 
 subway.printList();
 
+// QUEUES
+// a queue is a linear collection of nodes that exclusively adds (enqueues) nodes to the tail, and removes (dequeues) nodes from the head of the queue. the last method is peek which reveals data from the front of the queue without removing it. first in first out FIFO
+
+// if a queue has a limit on data that can be placed inside of it, it is called a bounded queue. if you attempt to add to a full queue, this is called queue overflow. if you attempt to dequeue from an empty queue, this is called queue underflow.
+
+// SIMPLE QUEUE EXAMPLE w/ ENQUEUE METHOD
+
+const LinkedList = require('./LinkedList');
+
+class Queue {
+  constructor() {
+    this.queue = new LinkedList();
+    this.size = 0;
+  }
+
+  enqueue(data) {
+    this.queue.addToTail(data);
+    this.size++;
+    if (this.queue !== null) {
+      console.log(`Added ${data}! Queue size is now ${this.size}.`);
+    }
+  }
+
+  dequeue() {
+    const data = this.queue.removeHead();
+    this.size--;
+    if (data) {
+      console.log(`Removed ${data}! Queue size is ${this.size}.`);
+    }
+  }
+}
+
+module.exports = Queue;
+
+const restaurantOrder = new Queue();
+console.log(`restaurantOrder queue has ${restaurantOrder.size} orders.\n`);
+restaurantOrder.enqueue('apple pie');
+restaurantOrder.enqueue('roast chicken');
+restaurantOrder.enqueue('quinoa salad');
+
+
