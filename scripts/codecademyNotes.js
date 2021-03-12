@@ -530,4 +530,6 @@ try {
 }
 
 
+// HASH MAPS
+// Hash maps map keys to their related values, and are one of the most efficient data structures when it comes to retrieving stored data. This is because the key associated with every value added allows for faster retrieval later on. When you come across a coding problem that requires you to store and retrieve data, keep in mind that hash maps will often be the most efficient data structure for that scenario.
 
